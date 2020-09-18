@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { isArray } from 'util'
 
 export const Flex = styled('div')<{
   center?: boolean,
@@ -20,7 +19,7 @@ export const Flex = styled('div')<{
     flexWrap: wrap || 'unset',
   }
 
-  if (flexChildren && isArray(flexChildren)) {
+  if (flexChildren && Array.isArray(flexChildren)) {
     flexChildren.forEach((f, i) => {
       retorno[`&>*:nth-of-type(${i + 1})`] = { flex: f }
     })
